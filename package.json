@@ -1,0 +1,17 @@
+{
+  "name": "graphql-server",
+  "version": "1.0.0",
+  "description": "An example GraphQL server for demo purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "keywords": [
+    "GraphQL"
+  ],
+  "author": "Robin",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^16.1.0"
+  }
+}
