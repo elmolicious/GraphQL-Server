@@ -1,0 +1,23 @@
+type User {
+	email: ID!
+	firstName: String
+	lastName: String
+}
+
+type Account {
+	id: ID!
+	name: String
+	country: Country
+}
+
+enum Country {
+	GERMANY
+	USA
+}
+
+type Query {
+	getUser(id: ID!): User
+	getAllUsers: [User]
+	getAccount(id: ID!): Account
+	getAllAccounts: [Account]
+}

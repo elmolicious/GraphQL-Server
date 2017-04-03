@@ -10,8 +10,9 @@
     "GraphQL"
   ],
   "author": "Robin",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "graphql-tools": "^0.10.1",
     "hapi": "^16.1.0"
   }
 }

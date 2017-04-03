@@ -1,0 +1,29 @@
+query get_all_users {
+  getAllUsers {
+    email
+    firstName
+    lastName
+  }
+}
+
+query get_user{
+  getUser(id: 1){
+    email
+    lastName
+  }
+}
+
+query get_all_accounts {
+  getAllAccounts {
+    id,
+    name
+  }
+}
+
+query get_account {
+  getAccount(id: 1){
+    id,
+    name,
+    country
+  }
+}
