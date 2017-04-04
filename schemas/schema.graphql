@@ -1,13 +1,15 @@
 type User {
 	email: ID!
-	firstName: String
-	lastName: String
+	firstName: String!
+	lastName: String!
+	accountIds: [Integer]!
 }
 
 type Account {
 	id: ID!
-	name: String
-	country: Country
+	name: String!
+	country: Country!
+	users: [User!]
 }
 
 enum Country {
@@ -18,6 +20,9 @@ enum Country {
 type Query {
 	getUser(id: ID!): User
 	getAllUsers: [User]
+
+	getUserBatch(ids: [ID!]!): [User]
+
 	getAccount(id: ID!): Account
 	getAllAccounts: [Account]
 }

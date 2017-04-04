@@ -12,6 +12,7 @@
   "author": "Robin",
   "license": "MIT",
   "dependencies": {
+    "graphql-server-hapi": "^0.6.0",
     "graphql-tools": "^0.10.1",
     "hapi": "^16.1.0"
   }

@@ -22,3 +22,7 @@ For further information about GraphQL you may visit [his repository](https://git
 # License
 
 This project is under the MIT license.
+
+# Todos
+
+- directiven: @include(if: boolVariable)

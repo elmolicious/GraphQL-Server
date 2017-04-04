@@ -6,6 +6,7 @@ module.exports = {
 	Query: {
 		getUser: (source, args, context, info) => getUser(),
 		getAllUsers: (source, args, context, info) => getUsers(),
+		getUserBatch: (source, args, context, info) => getUsers(),
 		getAccount: (source, args, context, info) => getAccount(),
 		getAllAccounts: (source, args, context, info) => getAccounts(),
 	},
@@ -18,6 +19,7 @@ module.exports = {
 		id:  (source, args, context, info) => source.id,
 		name:  (source, args, context, info) => source.name,
 		country:  (source, args, context, info) => source.country,
+		users: (source, args, context, info) => context.users
 	}
 }
 
