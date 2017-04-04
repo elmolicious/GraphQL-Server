@@ -29,7 +29,6 @@ server.register({
 })
 
 // GraphiQL Explorativ UI
-
 server.register({
 	register: graphiqlHapi,
 	options: {

@@ -1,0 +1,22 @@
+[
+	{
+		"id": 1,
+		"name": "Robotzology",
+		"country": "GERMANY"
+	},
+	{
+		"id": 2,
+		"name": "Weiblich",
+		"country": "USA"
+	},
+	{
+		"id": 3,
+		"name": "Stark",
+		"country": "USA"
+	},
+	{
+		"id": 4,
+		"name": "Erfunden",
+		"country": "GERMANY"
+	}
+]

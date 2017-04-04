@@ -1,0 +1,68 @@
+[
+	{
+		"email": "robin@genske.com",
+		"first_name":"Robin",
+		"last_name": "Genske",
+		"accountIds": [1]
+	},
+	{
+		"email": "robotze@me.de",
+		"first_name":"Robotze",
+		"last_name": "Sparkle",
+		"accountIds": [1,4]
+	},
+	{
+		"email": "emma@stoned.com",
+		"first_name":"Emma",
+		"last_name": "Stone",
+		"accountIds": [2]
+	},
+	{
+		"email": "arya@stark.com",
+		"first_name":"Arya",
+		"last_name": "Stark",
+		"accountIds": [2,3,4]
+	},
+	{
+		"email": "günther@jauch.com",
+		"first_name":"Günter",
+		"last_name": "Jauch",
+		"accountIds": []
+	},
+	{
+		"email": "frodo@auenland.com",
+		"first_name":"Frodo",
+		"last_name": "Baggins",
+		"accountIds": [4]
+	},
+	{
+		"email": "arni@egger.com",
+		"first_name":"Arnold",
+		"last_name": "Schwarzenegger",
+		"accountIds": [3]
+	},
+	{
+		"email": "snape@hogwarts.com",
+		"first_name":"Severus",
+		"last_name": "Snape",
+		"accountIds": [4]
+	},
+	{
+		"email": "poldi@fussball.koeln",
+		"first_name":"Lukas",
+		"last_name": "Podolski",
+		"accountIds": [3]
+	},
+	{
+		"email": "info@lennister.com",
+		"first_name":"Tyrion",
+		"last_name": "Lennister",
+		"accountIds": [4]
+	},
+	{
+		"email": "007@mi6.co.uk",
+		"first_name":"Bond",
+		"last_name": "James Bond",
+		"accountIds": [3,4]
+	}
+]

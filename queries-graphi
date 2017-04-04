@@ -1,3 +1,5 @@
+# Queries
+
 query get_all_users {
   getAllUsers {
     email
@@ -6,24 +8,50 @@ query get_all_users {
   }
 }
 
-query get_user{
-  getUser(id: 1){
+query get_user($user_id: ID!) {
+  getUser(id: $user_id) {
     email
     lastName
   }
 }
 
-query get_all_accounts {
-  getAllAccounts {
-    id,
-    name
+query get_user_batch($ids: [ID!]!) {
+  getUserBatch(user_ids: $ids) {
+    email
+    firstName
+    lastName
+    accountIds
   }
 }
 
-query get_account {
-  getAccount(id: 1){
-    id,
-    name,
-    country
+query get_all_accounts {
+  getAllAccounts {
+    name
+    users {
+      email
+    }
   }
+}
+
+query get_account($account_id: ID!,$show_users: Boolean!) {
+  getAccount(id: $account_id) {
+    id
+    name
+    country
+    users @include(if: $show_users){
+      firstName
+      lastName
+      email
+      accountIds
+    }
+  }
+}
+
+# Variables
+
+{
+  "account_id": 1,
+  "user_id": "robin@genske.com",
+  "ids": ["robin@genske.com","arya@stark.com","robotze@me.de"],
+  "show_users": true
 }

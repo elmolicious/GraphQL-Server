@@ -2,7 +2,7 @@ type User {
 	email: ID!
 	firstName: String!
 	lastName: String!
-	accountIds: [Integer]!
+	accountIds: [Int]!
 }
 
 type Account {
@@ -21,7 +21,7 @@ type Query {
 	getUser(id: ID!): User
 	getAllUsers: [User]
 
-	getUserBatch(ids: [ID!]!): [User]
+	getUserBatch(user_ids: [ID!]!): [User]
 
 	getAccount(id: ID!): Account
 	getAllAccounts: [Account]

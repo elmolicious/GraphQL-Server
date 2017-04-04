@@ -1,14 +1,21 @@
+const _ = require('lodash');
+
+const users = require('./users.json');
+const accounts = require('./accounts.json');
+
+console.log(users);
+
+const user_api = {
+	get: email => users.filter(x => x.email === email)[0],
+	getAll: () => users
+}
+
+const account_api = {
+	get: id => accounts.filter(x => x.id == id)[0],
+	getAll: () => accounts
+}
+
 module.exports = {
-  users: [
-  	{
-  		email: 'bla@genske.com',
-   		first_name: 'robin',
-  		last_name: 'genske',
-  	},
-  	{
-  		email: 'blubb@doe.com',
-   		first_name: 'john',
-  		last_name: 'doe',
-  	}
-  ]
+	user_api,
+	account_api
 }

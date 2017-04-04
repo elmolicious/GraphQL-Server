@@ -1,54 +1,33 @@
 'use strict';
 
-const _ = require('lodash');
-
 module.exports = {
 	Query: {
-		getUser: (source, args, context, info) => getUser(),
-		getAllUsers: (source, args, context, info) => getUsers(),
-		getUserBatch: (source, args, context, info) => getUsers(),
-		getAccount: (source, args, context, info) => getAccount(),
-		getAllAccounts: (source, args, context, info) => getAccounts(),
+		getUser: (source, args, context, info) => context.user_api.get(args.id),
+		getAllUsers: (source, args, context, info) => context.user_api.getAll(),
+		getUserBatch: (source, args, context, info) => batchGetUser(context.user_api, args.user_ids),
+		getAccount: (source, args, context, info) => context.account_api.get(args.id),
+		getAllAccounts: (source, args, context, info) => context.account_api.getAll(),
 	},
 	User: {
 		email: (source, args, context, info) => source.email,
 		firstName: (source, args, context, info) => source.first_name,
 		lastName: (source, args, context, info) => source.last_name,
+		accountIds: (source, args, context, info) => source.accountIds
 	},
 	Account: {
 		id:  (source, args, context, info) => source.id,
 		name:  (source, args, context, info) => source.name,
 		country:  (source, args, context, info) => source.country,
-		users: (source, args, context, info) => context.users
+		users: (source, args, context, info) => getUsersWithAccountId(context.user_api, source.id)
 	}
 }
 
-const getUsers = () => [
-	{
-		email: 'robin@genske.com',
- 		first_name: 'robin',
-		last_name: 'genske',
-	},
-	{
-		email: 'john@doe.com',
- 		first_name: 'john',
-		last_name: 'doe',
-	}
-]
+function getUsersWithAccountId(api, accountId){
+	const users = api.getAll();
 
-const getUser = () => _.first(getUsers());
+	return users.filter(x => x.accountIds.includes(accountId));
+}
 
-const getAccounts = () => [
-	{
-		id: 1,
-		name: 'Robotz AG',
-		country: 'USA'
-	},
-	{
-		id: 2,
-		name: 'Robotz GmbH',
-		country: 'GERMANY'
-	}
-]
-
-const getAccount = () => _.first(getAccounts());
+function batchGetUser(api, user_ids){
+	return user_ids.map(id => api.get(id));
+}
