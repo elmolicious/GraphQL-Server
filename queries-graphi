@@ -33,12 +33,12 @@ query get_all_accounts {
   }
 }
 
-query get_account($account_id: ID!,$show_users: Boolean!) {
+query get_account($account_id: ID!, $show_users: Boolean!) {
   getAccount(id: $account_id) {
     id
     name
     country
-    users @include(if: $show_users){
+    users @include(if: $show_users) {
       firstName
       lastName
       email
@@ -47,11 +47,43 @@ query get_account($account_id: ID!,$show_users: Boolean!) {
   }
 }
 
+mutation create_user($new_user: UserInput!) {
+  createUser(input: $new_user) {
+    firstName
+    lastName
+    email
+  }
+}
+
+query introspection{
+  __schema{
+    queryType{
+      name
+    }
+  }
+}
+
+
 # Variables
 
 {
   "account_id": 1,
   "user_id": "robin@genske.com",
-  "ids": ["robin@genske.com","arya@stark.com","robotze@me.de"],
-  "show_users": true
+  "ids": [
+    "robin@genske.com",
+    "arya@stark.com",
+    "robotze@me.de"
+  ],
+  "show_users": true,
+  "new_user": {
+    "email": "test@test.com",
+    "first_name": "test",
+    "last_name": "test",
+    "accountIds": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
 }

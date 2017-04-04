@@ -12,6 +12,13 @@ type Account {
 	users: [User!]
 }
 
+input UserInput {
+	email: ID!
+	first_name: String!
+	last_name: String!
+	accountIds: [Int]!
+}
+
 enum Country {
 	GERMANY
 	USA
@@ -25,4 +32,8 @@ type Query {
 
 	getAccount(id: ID!): Account
 	getAllAccounts: [Account]
+}
+
+type Mutation {
+	createUser(input: UserInput!): User
 }

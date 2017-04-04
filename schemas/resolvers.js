@@ -8,6 +8,9 @@ module.exports = {
 		getAccount: (source, args, context, info) => context.account_api.get(args.id),
 		getAllAccounts: (source, args, context, info) => context.account_api.getAll(),
 	},
+	Mutation: {
+		createUser: (source, args, context, info) => context.user_api.create(args.input)
+	},
 	User: {
 		email: (source, args, context, info) => source.email,
 		firstName: (source, args, context, info) => source.first_name,
